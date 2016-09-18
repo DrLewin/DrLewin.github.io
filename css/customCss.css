@@ -1,0 +1,96 @@
+@charset "utf-8";
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    background-image: url('../images/stripes.jpg');
+    background-size: 200px 100%;
+    background-repeat: repeat-x;
+    padding-top: 100px;
+}
+
+
+/** LIGHTBOX MARKUP **/
+
+.lightbox {
+    /** Default lightbox to hidden **/
+    display: none;
+    /** Position and style **/
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox img {
+    /** Pad the lightbox image **/
+    max-width: 90%;
+    max-height: 80%;
+    margin-top: 2%;
+}
+
+.lightbox:target {
+    /** Remove default browser outline **/
+    outline: none;
+    /** Unhide lightbox **/
+    display: block;
+}
+
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+
+/*
+  WET-BOEW
+  @title: Details/summary polyfill pre-Modernizr CSS
+ */
+
+summary {
+    /*	Make sure summary remains visible*/
+    display: list-item !important;
+    visibility: visible !important;
+    outline: none;
+    padding: 1%;
+}
+
+details {
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+    color: #363636;
+    background-color: #999999;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+details:hover {
+    border: solid 1px #000000;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #000000;
+}
