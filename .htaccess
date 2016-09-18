@@ -1,6 +1,7 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
-Redirect permanent index.html https://drlewin.github.io
-Redirect permanent https://drlewin.github.io/index https://drlewin.github.io
-Redirect permanent https://drlewin.github.io/index.html https://drlewin.github.io
+
+RewriteBase /
+RewriteCond %{THE_REQUEST} ^GET.*index\.html [NC]
+RewriteRule (.*?)index\.html/*(.*) /$1$2 [R=301,NE,L]
